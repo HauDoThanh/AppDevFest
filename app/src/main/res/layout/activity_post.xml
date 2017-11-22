@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.phamh.devfest.Activitys.PostActivity">
+
+    <Spinner
+        android:id="@+id/spnCategoryPost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></Spinner>
+
+    <LinearLayout
+        android:weightSum="1"
+        android:id="@+id/lnChoosePost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/layoutPostSearchMatch"
+            layout="@layout/layout_post_search_match"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/layoutPostRecruitMember"
+            layout="@layout/layout_post_recruit_member"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+</LinearLayout>
