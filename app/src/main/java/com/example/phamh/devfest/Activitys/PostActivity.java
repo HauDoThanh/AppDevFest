@@ -126,8 +126,6 @@ public class PostActivity extends AppCompatActivity {
         int hour = today.get(Calendar.HOUR_OF_DAY);
         int minute = today.get(Calendar.MINUTE);
 
-
-
         TimePickerDialog timeDialog = new TimePickerDialog(PostActivity.this, new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker timePicker, int i, int i1) {
