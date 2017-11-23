@@ -16,24 +16,6 @@ public class Yard implements Serializable {
     private int soLuongSan;
     private int soLanThue;
     private List<String> listHinhAnh = new ArrayList<>();
-    private double X;
-    private double Y;
-
-    public double getX() {
-        return X;
-    }
-
-    public void setX(double x) {
-        X = x;
-    }
-
-    public double getY() {
-        return Y;
-    }
-
-    public void setY(double y) {
-        Y = y;
-    }
 
     public String getTenSan() {
         return tenSan;
