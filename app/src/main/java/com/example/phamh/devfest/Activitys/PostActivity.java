@@ -73,6 +73,8 @@ public class PostActivity extends AppCompatActivity {
         addEvents();
     }
 
+
+
     private void checkUserIsLeader(boolean test) {
 //        spfUserIsLeader = this.getSharedPreferences("DATA_LOGIN", MODE_PRIVATE);
 //        Boolean isLeader = spfUserIsLeader.getBoolean("leader", false);
