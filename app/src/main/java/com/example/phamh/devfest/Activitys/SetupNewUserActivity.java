@@ -62,6 +62,8 @@ public class SetupNewUserActivity extends AppCompatActivity{
         edtDiaChi = (EditText) findViewById(R.id.editTextDiaChi);
         edtMoTa = (EditText) findViewById(R.id.editTextMoTa);
 
+
+
         //Lay du lieu ve Preferences
         SharedPreferences dataSignIn = getSharedPreferences (Constantttt.DATA_LOCGIN,MODE_PRIVATE);
         id = dataSignIn.getString("idFb","");
