@@ -1,15 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout
+    android:padding="@dimen/value8"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
 
-    <ImageView
-        android:id="@+id/imgAvatarUser"
-        android:layout_width="100sp"
-        android:layout_height="100sp" />
+    >
+
+    <android.support.v7.widget.CardView
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_gravity="center"
+                android:id="@+id/imgAvatarUser"
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:contentDescription="@string/app_name"/>
+            <TextView
+                android:id="@+id/tv_nameUser"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="My Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
 
 
+    <!--<TextView-->
+        <!--android:text="Chào mừng bạn đến với AndroidDevFest"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
 
 
+    <android.support.v7.widget.CardView
+        android:layout_marginTop="@dimen/value8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:text="Số điện thoại"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/editTextSDT"
+                android:hint="Số điện thoại"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
 
-</RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_marginTop="@dimen/value8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/editTextDiaChi"
+            android:hint="Địa chỉ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_marginTop="@dimen/value8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/editTextMoTa"
+            android:hint="Hãy nói cho mọi người biết về bạn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="4"/>
+    </android.support.v7.widget.CardView>
+
+    <Button
+        android:onClick="upLoadtoFirebase"
+        android:text="Hoàn tất"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>
