@@ -8,4 +8,23 @@
     <string name="facebook_app_id">195178437723936</string>
     <string name="fb_login_protocol_scheme">fb195178437723936</string>
     <string name="title_activity_maps">Map</string>
+
+    <string name="name">name</string>
+    <string name="id">id</string>
+    <string name="email">email</string>
+    <string name="link">link</string>
+    <string name="fields">fields</string>
+    <string name="fields_name">id,name,link,email</string>
+    <string name="data">data</string>
+
+    <string name="GPS_not_enable">GPS is not enabled</string>
+    <string name="enable_GPS">Turn on GPS, please!</string>
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="open">Open</string>
+    <string name="cancel">Cancel</string>
+
+
+
 </resources>

@@ -19,8 +19,25 @@
             android:name=".Activitys.MainActivity"
             android:label="@string/app_name">
 
+
+
         </activity>
         <activity android:name=".Activitys.ChatAllActivity"></activity>
+
+
+        <activity android:name=".Activitys.SetupNewUserActivity"
+            android:label="Tạo tài khoản">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <activity android:name=".Activitys.SignInActivity"
+            android:label="Đăng nhập"></activity>
+
         <!-- Facebook -->
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
@@ -50,11 +67,7 @@
         <activity
             android:name=".Activitys.MapsActivity"
             android:label="@string/title_activity_maps">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

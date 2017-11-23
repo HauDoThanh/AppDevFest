@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://E:\HocAndroid\AppDevFest2222\AppDevFest.iml" filepath="E:\HocAndroid\AppDevFest2222\AppDevFest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/AppDevFest2222.iml" filepath="$PROJECT_DIR$/AppDevFest2222.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AppDevFest2.iml" filepath="$PROJECT_DIR$/AppDevFest2.iml" />
+      <module fileurl="file://C:\Users\buimi\Documents\AppDevFest2\AppDevFest2222.iml" filepath="C:\Users\buimi\Documents\AppDevFest2\AppDevFest2222.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

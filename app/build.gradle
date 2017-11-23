@@ -38,5 +38,8 @@ dependencies {
     //Facebook add
     compile 'com.facebook.android:facebook-login:[4,5)'
 
+    //Xem anh tu internet
+    compile 'com.squareup.picasso:picasso:2.5.2'
+
 }
 apply plugin: 'com.google.gms.google-services'

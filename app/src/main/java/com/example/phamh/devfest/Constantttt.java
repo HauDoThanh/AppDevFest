@@ -6,4 +6,5 @@ package com.example.phamh.devfest;
 
 public class Constantttt {
     public static final String ROOT_TEAMS="ROOT_TEAMS";
+    public static final String DATA_LOCGIN="DATA_LOCGIN";
 }
