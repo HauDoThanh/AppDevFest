@@ -5,8 +5,8 @@
     <string name="title_notifications">Notifications</string>
 
     <!--Faceboook-->
-    <string name="facebook_app_id">132712694059894</string>
-    <string name="fb_login_protocol_scheme">fb132712694059894</string>
+    <string name="facebook_app_id">1131751426961713</string>
+    <string name="fb_login_protocol_scheme">fb1131751426961713</string>
     <string name="title_activity_maps">Map</string>
 
     <string name="name">name</string>

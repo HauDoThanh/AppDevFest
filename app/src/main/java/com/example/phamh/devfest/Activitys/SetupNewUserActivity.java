@@ -3,10 +3,12 @@ package com.example.phamh.devfest.Activitys;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -32,26 +34,19 @@ import static java.security.AccessController.getContext;
  */
 
 public class SetupNewUserActivity extends AppCompatActivity{
-
-
     private double x = 0.0;
     private double y = 0.0;
-
     private String name, id, imageURL;
     private UserClass userClass;
     private ImageView imgAvatarUser;
     private TextView tvNameUser;
     private EditText edtSDT,edtDiaChi,edtMoTa;
-
     private DatabaseReference dbRef;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setupnewuser);
-
-
-
 
         turnGPSOn();
         getLocation();
@@ -62,7 +57,7 @@ public class SetupNewUserActivity extends AppCompatActivity{
         edtDiaChi = (EditText) findViewById(R.id.editTextDiaChi);
         edtMoTa = (EditText) findViewById(R.id.editTextMoTa);
 
-
+        edtSDT.getText().length();
 
         //Lay du lieu ve Preferences
         SharedPreferences dataSignIn = getSharedPreferences (Constantttt.DATA_LOCGIN,MODE_PRIVATE);
@@ -73,11 +68,7 @@ public class SetupNewUserActivity extends AppCompatActivity{
         userClass = new UserClass(id,name,x,y,false,edtSDT.getText().toString(),imageURL, edtMoTa.getText().toString(),edtDiaChi.getText().toString());
 
         Picasso.with(this).load(imageURL).into(imgAvatarUser);
-
     }
-
-
-
     private void getLocation(){
         LocationManager manager = (LocationManager) getSystemService(LOCATION_SERVICE);
         GPSTracker gpsTracker = new GPSTracker();
@@ -120,7 +111,24 @@ public class SetupNewUserActivity extends AppCompatActivity{
 
     //Up Firebase
     public void upLoadtoFirebase(View view) {
-        dbRef = FirebaseDatabase.getInstance().getReference();
-        dbRef.child("USER").setValue(userClass);
+        if (checkNullEditext()){
+            dbRef = FirebaseDatabase.getInstance().getReference();
+            dbRef.child("USER").setValue(userClass);
+        }
+    }
+
+    private boolean checkNullEditext(){
+        if (edtSDT.getText().length()==0 && edtDiaChi.getText().length()==0 && edtMoTa.getText().length()==0){
+            if(edtSDT.getText().length()==0){
+                edtSDT.setError("Bạn chưa nhập số điện thoại");
+            }
+            if(edtDiaChi.getText().length()==0){
+                edtDiaChi.setError("Bạn chưa nhập địa chỉ");
+            }
+            if(edtMoTa.getText().length()==0){
+                edtMoTa.setError("Bạn chưa nhập mô tả");
+            }
+            return false;
+        }else return true;
     }
 }
