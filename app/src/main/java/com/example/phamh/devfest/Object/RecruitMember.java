@@ -14,6 +14,7 @@ public class RecruitMember {
     private double X;
     private double Y;
 
+
     public RecruitMember() {}
 
     public String getID() {

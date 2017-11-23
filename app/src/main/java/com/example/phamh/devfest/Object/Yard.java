@@ -13,6 +13,7 @@ public class Yard implements Serializable {
     private String tenChuSan;
     private String diaChiSan;
     private String sdt;
+
     private int soLuongSan;
     private int soLanThue;
     private List<String> listHinhAnh = new ArrayList<>();

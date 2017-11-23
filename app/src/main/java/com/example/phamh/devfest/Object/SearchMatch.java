@@ -14,6 +14,7 @@ public class SearchMatch implements Serializable{
     private String time;
     private String nameOfYard;
     private String type;
+
     private String urlAvatar;
     private double X;
     private double Y;
