@@ -18,25 +18,19 @@
         <activity
             android:name=".Activitys.MainActivity"
             android:label="@string/app_name">
-
-
-
         </activity>
-        <activity android:name=".Activitys.ChatAllActivity"></activity>
 
+        <activity android:name=".Activitys.ChatAllActivity"></activity>
 
         <activity android:name=".Activitys.SetupNewUserActivity"
             android:label="Tạo tài khoản">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
 
         <activity android:name=".Activitys.SignInActivity"
-            android:label="Đăng nhập"></activity>
+            android:label="Đăng nhập">
+
+        </activity>
 
         <service
             android:name=".Service.GPSTracker"
@@ -73,6 +67,14 @@
             android:name=".Activitys.MapsActivity"
             android:label="@string/title_activity_maps">
 
+        </activity>
+
+        <activity android:name=".Activitys.PostActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

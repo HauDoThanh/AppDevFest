@@ -22,11 +22,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
-import java.io.File;
-import java.net.URL;
-
-import static java.security.AccessController.getContext;
-
 /**
  * Created by buimi on 11/23/2017.
  */
@@ -75,7 +70,6 @@ public class SetupNewUserActivity extends AppCompatActivity{
         Picasso.with(this).load(imageURL).into(imgAvatarUser);
 
     }
-
 
 
     private void getLocation(){
