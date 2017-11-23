@@ -15,7 +15,9 @@ import android.support.v4.content.ContextCompat;
 
 public class GPSTracker extends Service implements LocationListener {
 
-    private final Context context;
+
+
+    private Context context;
 
     boolean isGPSEnabled =false;
     boolean isNetworkEnabled =false;
@@ -26,10 +28,9 @@ public class GPSTracker extends Service implements LocationListener {
 
 
 
-    public GPSTracker(Context context){
-        this.context=context;
-    }
 
+    public GPSTracker() {
+    }
 // create a GetLocation Method //
 
     public Location getLocation(){

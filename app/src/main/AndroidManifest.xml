@@ -38,6 +38,11 @@
         <activity android:name=".Activitys.SignInActivity"
             android:label="Đăng nhập"></activity>
 
+        <service
+            android:name=".Service.GPSTracker"
+            android:enabled="true"
+            android:exported="true" />
+
         <!-- Facebook -->
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
