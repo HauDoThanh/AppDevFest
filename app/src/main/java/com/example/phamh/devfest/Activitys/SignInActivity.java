@@ -86,6 +86,8 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                                 edit_login.putString("idFb", id);
                                 edit_login.putString("name", name);
                                 edit_login.putString("imageURL", imageURL.toString());
+                                //cho nay
+                                edit_login.putBoolean("isLeader", false);
                                 edit_login.apply();
                             }
                         });

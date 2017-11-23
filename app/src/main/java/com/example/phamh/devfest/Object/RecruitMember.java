@@ -10,6 +10,7 @@ public class RecruitMember {
     private String nameOfTeam;
     private String number;
     private String description;
+    private String address;
     private String urlAvatar;
     private double X;
     private double Y;
@@ -54,6 +55,14 @@ public class RecruitMember {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getUrlAvatar() {

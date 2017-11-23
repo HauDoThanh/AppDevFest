@@ -14,6 +14,7 @@ public class SearchMatch implements Serializable{
     private String time;
     private String nameOfYard;
     private String type;
+    private String address;
     private String urlAvatar;
     private double X;
     private double Y;
@@ -75,6 +76,14 @@ public class SearchMatch implements Serializable{
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getUrlAvatar() {

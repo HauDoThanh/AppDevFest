@@ -287,9 +287,10 @@ public class PostActivity extends AppCompatActivity {
             SearchMatch searchMatch = new SearchMatch();
             searchMatch.setID(ID);
 
-            //3 trường này nữa mình lấy từ ShareReference
+            //4 trường này nữa mình lấy từ ShareReference
             searchMatch.setIDTeam("");
             searchMatch.setNameOfTeam("");
+            searchMatch.setAddress("");
             searchMatch.setUrlAvatar("");
 
             searchMatch.setDate(edtShowDayOfMatch.getText().toString());
@@ -330,9 +331,10 @@ public class PostActivity extends AppCompatActivity {
             RecruitMember recruitMember = new RecruitMember();
             recruitMember.setID(ID);
 
-            //3 trường này nữa mình lấy từ ShareReference
+            //4 trường này nữa mình lấy từ ShareReference
             recruitMember.setIDTeam("");
             recruitMember.setNameOfTeam("");
+            recruitMember.setAddress("");
             recruitMember.setUrlAvatar("");
 
             recruitMember.setNumber(edtNumberMember.getText().toString());
