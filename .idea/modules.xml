@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AppDevFest.iml" filepath="$PROJECT_DIR$/AppDevFest.iml" />
+      <module fileurl="file://C:\Users\buimi\Documents\AppDevFest2\AppDevFest.iml" filepath="C:\Users\buimi\Documents\AppDevFest2\AppDevFest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AppDevFest2.iml" filepath="$PROJECT_DIR$/AppDevFest2.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
