@@ -7,6 +7,10 @@
     android:layout_height="match_parent"
     tools:context="com.example.phamh.devfest.Activitys.MainActivity">
 
+    <include
+        android:id="@+id/content"
+        layout="@layout/fragment_news"/>
+
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="0dp"
