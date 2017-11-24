@@ -1,10 +1,10 @@
-package com.example.phamh.devfest.Class;
+package com.example.phamh.devfest.Object;
 
 /**
  * Created by buimi on 11/22/2017.
  */
 
-public class UserClass {
+public class User {
     private String id;
     private String hoTen;
     private double x;
@@ -15,7 +15,7 @@ public class UserClass {
     private String mota;
     private String diaChi;
 
-    public UserClass(String id, String hoTen, double x, double y, boolean isleader, String sdt, String imgUrlUser, String mota, String diaChi) {
+    public User(String id, String hoTen, double x, double y, boolean isleader, String sdt, String imgUrlUser, String mota, String diaChi) {
         this.id = id;
         this.hoTen = hoTen;
         this.x = x;

@@ -89,13 +89,15 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                                 //cho nay
                                 edit_login.putBoolean("isLeader", false);
                                 edit_login.apply();
+
+                                checkOnFirebase(id);
                             }
                         });
                 Bundle parameters = new Bundle();
                 parameters.putString(getString(R.string.fields), getString(R.string.fields_name));
                 request.setParameters(parameters);
                 request.executeAsync();
-                checkOnFirebase(id);
+
             }
 
             @Override
@@ -145,21 +147,19 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     private void checkOnFirebase(final String id){
         DatabaseReference root = FirebaseDatabase.getInstance().getReference();
         DatabaseReference users = root.child("USER");
-        users.addListenerForSingleValueEvent(new ValueEventListener() {
+        users.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
-                if (snapshot.child(id).exists()) {
-                    startActivity(new Intent(SignInActivity.this, MainActivity.class));
-                    finish();
-                }else{
-                    startActivity(new Intent(SignInActivity.this, SetupNewUserActivity.class));
-                    finish();
-                }
+                    if (snapshot.hasChild(id)) {
+                        startActivity(new Intent(SignInActivity.this, MainActivity.class));
+                        finish();
+                    }else{
+                        startActivity(new Intent(SignInActivity.this, SetupNewUserActivity.class));
+                        finish();
+                    }
             }
-
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
             }
         });
 

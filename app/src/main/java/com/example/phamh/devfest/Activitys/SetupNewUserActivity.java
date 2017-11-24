@@ -3,12 +3,13 @@ package com.example.phamh.devfest.Activitys;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.location.Location;
 import android.location.LocationManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -16,18 +17,16 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.phamh.devfest.Class.UserClass;
+import com.example.phamh.devfest.Object.User;
 import com.example.phamh.devfest.Constantttt;
 import com.example.phamh.devfest.R;
 import com.example.phamh.devfest.Service.GPSTracker;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.squareup.picasso.Picasso;
 
-import java.io.File;
+import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
-
-import static java.security.AccessController.getContext;
 
 /**
  * Created by buimi on 11/23/2017.
@@ -37,7 +36,7 @@ public class SetupNewUserActivity extends AppCompatActivity{
     private double x = 0.0;
     private double y = 0.0;
     private String name, id, imageURL;
-    private UserClass userClass;
+    private User user;
     private ImageView imgAvatarUser;
     private TextView tvNameUser;
     private EditText edtSDT,edtDiaChi,edtMoTa;
@@ -49,7 +48,7 @@ public class SetupNewUserActivity extends AppCompatActivity{
         setContentView(R.layout.activity_setupnewuser);
 
         turnGPSOn();
-        getLocation();
+//        getLocation();
 
         //Khoi tao view
         imgAvatarUser = (ImageView) findViewById(R.id.imgAvatarUser);
@@ -57,7 +56,6 @@ public class SetupNewUserActivity extends AppCompatActivity{
         edtDiaChi = (EditText) findViewById(R.id.editTextDiaChi);
         edtMoTa = (EditText) findViewById(R.id.editTextMoTa);
 
-        edtSDT.getText().length();
 
         //Lay du lieu ve Preferences
         SharedPreferences dataSignIn = getSharedPreferences (Constantttt.DATA_LOCGIN,MODE_PRIVATE);
@@ -65,9 +63,9 @@ public class SetupNewUserActivity extends AppCompatActivity{
         name = dataSignIn.getString("name","");
         imageURL = dataSignIn.getString("imageURL","");
 
-        userClass = new UserClass(id,name,x,y,false,edtSDT.getText().toString(),imageURL, edtMoTa.getText().toString(),edtDiaChi.getText().toString());
-
-        Picasso.with(this).load(imageURL).into(imgAvatarUser);
+        user = new User(id,name,x,y,false,edtSDT.getText().toString(),imageURL, edtMoTa.getText().toString(),edtDiaChi.getText().toString());
+        new setImgAvatar().execute("");
+//        Picasso.with(this).load(imageURL).into(imgAvatarUser);
     }
     private void getLocation(){
         LocationManager manager = (LocationManager) getSystemService(LOCATION_SERVICE);
@@ -111,14 +109,43 @@ public class SetupNewUserActivity extends AppCompatActivity{
 
     //Up Firebase
     public void upLoadtoFirebase(View view) {
+        user = new User(id,name,x,y,false,edtSDT.getText().toString(),imageURL, edtMoTa.getText().toString(),edtDiaChi.getText().toString());
         if (checkNullEditext()){
             dbRef = FirebaseDatabase.getInstance().getReference();
-            dbRef.child("USER").setValue(userClass);
+            dbRef.child("USER").child(id).setValue(user);
+//            startActivity(new Intent(SetupNewUserActivity.this, MainActivity.class));
+//            finish();
+        }
+    }
+
+    private class setImgAvatar extends AsyncTask<String, Void, Void> {
+        Bitmap mIcon1;
+        @Override
+        protected Void doInBackground(String... strings) {
+            URL urlimg = null;
+            try {
+                urlimg = new URL(imageURL);
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+            try {
+                mIcon1 = BitmapFactory.decodeStream(urlimg.openConnection().getInputStream());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result){
+            imgAvatarUser.setImageBitmap(mIcon1);
         }
     }
 
     private boolean checkNullEditext(){
-        if (edtSDT.getText().length()==0 && edtDiaChi.getText().length()==0 && edtMoTa.getText().length()==0){
+        if (edtSDT.getText().length()!= 0 && edtDiaChi.getText().length()!=0 && edtMoTa.getText().length()!=0){
+            return true;
+        }else{
             if(edtSDT.getText().length()==0){
                 edtSDT.setError("Bạn chưa nhập số điện thoại");
             }
@@ -129,6 +156,6 @@ public class SetupNewUserActivity extends AppCompatActivity{
                 edtMoTa.setError("Bạn chưa nhập mô tả");
             }
             return false;
-        }else return true;
+        }
     }
 }

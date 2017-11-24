@@ -30,6 +30,12 @@
         <activity android:name=".Activitys.SignInActivity"
             android:label="Đăng nhập">
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
         </activity>
 
         <service
@@ -70,11 +76,7 @@
         </activity>
 
         <activity android:name=".Activitys.PostActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
